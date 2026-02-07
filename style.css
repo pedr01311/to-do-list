@@ -1,0 +1,102 @@
+
+        body {
+            font-family: Arial, sans-serif;  
+            background: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center; /* Centraliza verticalmente melhor */
+            min-height: 100vh; /* Garante que ocupa a tela toda */
+            margin: 0; 
+            
+            background: linear-gradient(-45deg, #1a1a1a, #2b2b2b, #3a3a3a, #111111); 
+            background-size: 400% 400%; 
+            animation: fade 20s ease infinite; 
+        }
+
+        @keyframes fade {
+             0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            /* Removi o margin-top fixo gigante e deixei o flex do body centralizar */
+            background: linear-gradient(-45deg, #f2f2f2, #808080, #696969);
+            background-size: 400% 400%;
+            animation: fade 20s ease infinite;
+            padding: 50px;
+            border-radius: 10px;
+            width: 500px;
+            
+            /* CORREÇÃO PRINCIPAL: */
+            min-height: 200px; /* Altura mínima */
+            height: auto;      /* Cresce se tiver muita tarefa */
+            
+            box-shadow: 0 0 10px rgba(0,0,0,0.4);
+        }
+
+        h1 {
+            text-align: center;
+            color: #f2f2f2;
+            margin-top: 0;
+        }
+
+        .input-group {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        input {
+            width: 70%;
+            padding: 10px;
+            border-radius: 7px;
+            border: none;
+        }
+
+        button {
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 7px;
+            border: none;
+            background: #333;
+            color: white;
+            transition: 0.3s;
+        }
+        
+        button:hover {
+            background: #555;
+        }
+
+        button i {
+            pointer-events: none;
+        }
+
+        li {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            border-radius: 5px;
+        }
+        
+        li span {
+            flex-grow: 1;
+            word-break: break-all; /* Impede texto gigante de estourar a caixa */
+            color: #333;
+            font-weight: bold;
+        }
+
+        li button {
+            background: transparent;
+            color: #333;
+            margin-left: 5px;
+        }
+        
+        li button:hover {
+            color: red;
+            background: transparent;
+        }
+
+    
